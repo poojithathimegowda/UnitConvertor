@@ -20,9 +20,25 @@ namespace UnitConvertor
     /// </summary>
     public partial class MainWindow : Window
     {
+        double inputNo,outputNo;
+        string convertionType;
+
+       
+
+        private void ConvertButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void convertFrom_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            input.Text= "0";
         }
     }
 }
