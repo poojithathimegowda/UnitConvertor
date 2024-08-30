@@ -6,24 +6,44 @@
         xmlns:local="clr-namespace:UnitConvertor"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-        <TextBox Name="InputValue" Width="100" Height="30" Margin="355,124,346,280"/>
-        <ComboBox Name="FromUnit" Width="100" Height="30" Margin="355,164,345,240"  >
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Enter Value:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="InputValue" Grid.Row="0" Grid.Column="1" Width="200" Margin="5"/>
+
+        <Label Content="Convert From:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox Name="FromUnit" Grid.Row="1" Grid.Column="1" Width="200" Margin="5">
             <ComboBoxItem>Meters</ComboBoxItem>
             <ComboBoxItem>Kilometers</ComboBoxItem>
             <ComboBoxItem>Feet</ComboBoxItem>
             <ComboBoxItem>Miles</ComboBoxItem>
         </ComboBox>
 
-        <ComboBox Name="ToUnit" Width="100" Height="30" Margin="355,206,346,198" >
+        <Label Content="Convert To:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox Name="ToUnit" Grid.Row="2" Grid.Column="1" Width="200" Margin="5">
             <ComboBoxItem>Meters</ComboBoxItem>
             <ComboBoxItem>Kilometers</ComboBoxItem>
             <ComboBoxItem>Feet</ComboBoxItem>
             <ComboBoxItem>Miles</ComboBoxItem>
         </ComboBox>
-        <Button Content="Convert" Width="100" Height="30" Margin="355,248,346,156" Click="ConvertButton_Click"  Grid.Row="3"/>
-        <TextBlock Name="Result" Width="100" Height="30" Margin="355,289,346,115" />
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+            <Button Content="Convert" Width="100" Margin="5" Click="ConvertButton_Click"/>
+            <Button Content="Reset" Width="100" Margin="5" Click="ResetButton_Click"/>
+        </StackPanel>
+
+        <TextBlock Name="Result" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="5" FontSize="16" FontWeight="Bold"/>
     </Grid>
-
 </Window>
