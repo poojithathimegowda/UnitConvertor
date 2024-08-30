@@ -7,14 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="input" HorizontalAlignment="Left" Height="46" Margin="278,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="127"/>
-        <Label Content="Convert From:" HorizontalAlignment="Left" Height="46" Margin="169,53,0,0" VerticalAlignment="Top" Width="109"/>
-        <ComboBox x:Name="convertFrom" HorizontalAlignment="Left" Height="46" Margin="451,53,0,0" VerticalAlignment="Top" Width="128" SelectionChanged="convertFrom_SelectionChanged"/>
-        <ComboBox x:Name="convertTo" HorizontalAlignment="Left" Height="47" Margin="278,112,0,0" VerticalAlignment="Top" Width="127"/>
-        <Button x:Name="convertbutton" Content="Convert" HorizontalAlignment="Left" Height="53" Margin="278,175,0,0" VerticalAlignment="Top" Width="127" Click="ConvertButton_Click"/>
-        <Button Content="Reset" HorizontalAlignment="Left" Height="53" Margin="451,175,0,0" VerticalAlignment="Top" Width="128"/>
-        <Label Content="Convert To:" HorizontalAlignment="Left" Margin="169,112,0,0" VerticalAlignment="Top" Height="47" Width="93"/>
-        <TextBox x:Name="output" HorizontalAlignment="Left" Height="47" Margin="451,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="128"/>
+        
+        <TextBox Name="InputValue" Width="100" Height="30" Margin="355,124,346,280"/>
+        <ComboBox Name="FromUnit" Width="100" Height="30" Margin="355,164,345,240"  >
+            <ComboBoxItem>Meters</ComboBoxItem>
+            <ComboBoxItem>Kilometers</ComboBoxItem>
+            <ComboBoxItem>Feet</ComboBoxItem>
+            <ComboBoxItem>Miles</ComboBoxItem>
+        </ComboBox>
 
+        <ComboBox Name="ToUnit" Width="100" Height="30" Margin="355,206,346,198" >
+            <ComboBoxItem>Meters</ComboBoxItem>
+            <ComboBoxItem>Kilometers</ComboBoxItem>
+            <ComboBoxItem>Feet</ComboBoxItem>
+            <ComboBoxItem>Miles</ComboBoxItem>
+        </ComboBox>
+        <Button Content="Convert" Width="100" Height="30" Margin="355,248,346,156" Click="ConvertButton_Click"  Grid.Row="3"/>
+        <TextBlock Name="Result" Width="100" Height="30" Margin="355,289,346,115" />
     </Grid>
+
 </Window>
